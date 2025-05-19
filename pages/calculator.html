@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Page</title>
+    <link
+      rel="shortcut icon"
+      href="https://www.flaticon.com/free-icons/house"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="../styles/global.css" />
+    <style>
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #fff;
+        padding: 20px;
+        width: fit-content;
+        margin-top:5%;
+        margin-left: 38%;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      }
+
+      #input {
+        width: 100%;
+        height: 50px;
+        font-size: 24px;
+        text-align: right;
+        margin-bottom: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .btn-container {
+        display: grid;
+        grid-template-columns: repeat(4, 60px);
+        grid-gap: 10px;
+      }
+
+      .btn-container button {
+        height: 60px;
+        font-size: 20px;
+        border: none;
+        background-color: #e0e0e0;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+
+      .btn-container button:hover {
+        background-color: #d0d0d0;
+      }
+
+      #dot {
+        grid-column: span 2;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img
+        src="https://meritcurve.s3.ap-south-1.amazonaws.com/university/00d8bf78-4f98-438e-9988-54d5488bef4a.jpg"
+        alt="Node Js"
+        height="100"
+        width="100"
+      />
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="./Sum of two numbers.html">Sum</a></li>
+        <li><a href="./stopwatch.html">Stopwatch</a></li>
+        <li><a href="./convert.html">Celcius</a></li>
+        <li class="active"><a href="#">Calculator</a></li>
+      </ul>
+    </header>  
+    <div class="container">
+      <input type="text" placeholder="0" id="input" disabled />
+
+      <div class="btn-container">
+        <button>%</button>
+        <button>/</button>
+        <button id="clear">C</button>
+        <button id="back">&larr;</button>
+      
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button>-</button>
+
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>*</button>
+
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>+</button>
+
+        <button>0</button>
+        <button id="dot">.</button>
+        <button id="equals">=</button>
+        <div></div>
+      </div>
+    </div>
+
+    <script>
+      const input = document.getElementById("input");
+      const buttons = document.querySelectorAll(".btn-container button");
+
+      let expression = "";
+
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const value = button.textContent;
+
+          if (value === "=") {
+            try {
+              expression = eval(expression).toString();
+              input.value = expression;
+            } catch (error) {
+              input.value = "Error";
+              expression = "";
+            }
+          } else if (value === "C") {
+            expression = "";
+            input.value = "";
+          } else if (value === "←" || button.id === "back") {
+            expression = expression.slice(0, -1);
+            input.value = expression;
+          } else {
+            expression += value;
+            input.value = expression;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

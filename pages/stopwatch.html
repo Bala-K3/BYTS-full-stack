@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="shortcut icon" href="https://www.flaticon.com/free-icons/house" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/global.css">
+</head>
+<body>  
+    <header> 
+        <img src="https://meritcurve.s3.ap-south-1.amazonaws.com/university/00d8bf78-4f98-438e-9988-54d5488bef4a.jpg" alt="Node Js" height="100" width="100">
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./Sum of two numbers.html">Sum</a></li>
+            <li class="active"><a href="#">Stopwatch</a></li>
+            <li><a href="./convert.html">Celcius</a></li>
+            <li><a href="./calculator.html">Calculator</a></li>
+        </ul>
+    </header>
+    <div class="main-container">    
+        <div class="stopwatch">
+            <div class="timer">
+                <span id="hours">00 :</span>
+                <span id="minutes">00 :</span>
+                <span id="seconds">00</span>
+            </div>
+            <div class="btns">
+                <button class="btn btn-start" id="start" onclick="start()">Start</button>
+                <button class="btn btn-stop" id="stop" onclick="stop()">Pause</button>
+                <button class="btn btn-reset" is="reset" onclick="reset()">Reset</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        let hours = 0;
+        let minutes = 0;
+        let seconds = 0;
+        let timer;
+
+        const start = () => {
+            document.getElementById("start").disabled = true;
+            timer = setInterval(() => {
+                seconds++;
+                if(seconds > 59) {
+                    minutes++;
+                    seconds = 0;
+                }
+                if(minutes > 59) {
+                    hours++;
+                    minutes = 0;
+                }
+                document.getElementById("hours").innerText = formatTime(hours) + " :";
+                document.getElementById("minutes").innerText = formatTime(minutes) + " :";
+                document.getElementById("seconds").innerText = formatTime(seconds);
+            }, 1000);
+        }
+
+        const stop = () => {
+            clearInterval(timer);
+            document.getElementById("start").disabled = false;
+        }
+
+        const reset = () => {
+            clearInterval(timer);
+            document.getElementById("hours").innerText = "00 :";
+            document.getElementById("minutes").innerText = "00 :";
+            document.getElementById("seconds").innerText = "00";
+            document.getElementById("start").disabled = false;
+
+            hours = seconds = minutes = 0;
+        }
+
+        const formatTime = (time) => {
+            return time < 10 ? "0" + time : time;
+        }
+    </script>
+</body>
+</html>

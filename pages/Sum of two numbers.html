@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum of two Numbers</title>
+    <link rel="shortcut icon" href="https://www.flaticon.com/free-icons/add" type="image/x-icon"> 
+    <link rel="stylesheet" href="../styles/global.css">
+</head>
+<body>
+    <header>
+        <img src="https://meritcurve.s3.ap-south-1.amazonaws.com/university/00d8bf78-4f98-438e-9988-54d5488bef4a.jpg" alt="Node Js" height="100" width="100">
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li class="active"><a href="#">Sum</a></li>
+            <li><a href="./stopwatch.html">Stopwatch</a></li>
+            <li><a href="./convert.html">Celcius</a></li>
+            <li><a href="./calculator.html">Calculator</a></li>
+        </ul>
+    </header>
+    <div class="container-sum">
+        <div id="sumOfTheNumbers">
+            <h3>Sum of Two Numbers</h3>
+            <input type="number" id="value1" placeholder="Enter Value 1">
+            <input type="number" id="value2" placeholder="Enter Value 2">
+            <br>
+            <button id="calculate" onclick="calculate()" type="submit">Calculate</button>
+            <p id="result"></p>
+        </div>
+    </div>
+    <script>
+        const calculate = () => {
+            const value1 = document.getElementById("value1").value;
+            const value2 = document.getElementById("value2").value;
+
+            if(!value1.length > 0 || !value2.length > 0) {
+                alert("Enter the numbers");
+                return;
+            }
+            result.innerText = `The sum of ${value1} and ${value2} is ${parseInt(value1) + parseInt(value2)}`;
+        }
+    </script>
+</body>
+</html>

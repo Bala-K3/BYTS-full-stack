@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+header,
+ul {
+  display: flex;
+  background-color: #333131;
+  justify-content: space-between;
+  align-items: center;
+  padding:10px;
+}
+
+body {
+  background-image: linear-gradient(120deg, #e49148, #edb383a7, #ea5b08);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+img {
+  height:50px;
+  width:150px;
+  opacity: .8;
+}
+
+img:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+section {
+  width: 200px;
+  height: 100px;
+}
+
+ul {
+  width: 600px;
+}
+
+li {
+  list-style-type: none; 
+  padding:10px 17px;  
+  border-radius:5px;
+  font-weight:600;
+  margin-right:10px;
+  font-size: 17px;
+}
+
+li:hover {
+  background-color:rgba(238, 232, 232, 0.178);
+  opacity:1;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  padding:5px;
+}
+
+.active {
+  background-color:tomato;
+  color:black;
+  transition: .3s ease-in-out;
+}
+
+.active:hover {
+  background-color: rgb(221, 95, 73);
+}
+
+.container-box {
+  display:flex;
+  justify-content: center;
+}
+
+#content {
+  display: flex;
+  margin-top:40vh;
+  font-size:3rem;
+  color: #fff;
+  font-weight: 900;
+}
+
+.container-sum {
+  background-color: #ecab768c;
+  margin-top: 10%;
+  width: 500px;
+  height:300px;
+  margin-left:33%;
+}
+
+#sumOfTheNumbers {
+  display:flex; 
+  flex-direction: column;
+  align-items: center;
+  gap:10px;
+}
+::-webkit-inner-spin-button {
+  display: none;
+}
+
+#sumOfTheNumbers  > input {
+  width:200px;
+  height:30px;
+  border:none;
+  border-radius: 5px; 
+  padding: 2px 5px;
+}
+
+#sumOfTheNumbers > input:active {
+  border-color: orange;
+
+}
+#sumOfTheNumbers > input:focus {
+  border-color: orange;
+}
+
+
+#sumOfTheNumbers  > button {
+  background-color: #ff6347;
+  border:none;
+  border-radius: 8px;
+  /* margin:40px; */
+  width: 200px;
+  cursor:pointer;
+  height:30px;
+  color: Whitesmoke;
+  font-weight:600;
+}
+
+#sumOfTheNumbers  > button:hover {
+  background-color: #c25643;
+}
+
+#sumOfTheNumbers > h3 {
+  color: #fff;
+  font-weight:700;
+  font-size: 1.5rem;
+  margin-bottom: 3%;
+  margin-top: 5%;
+  /* width: 250px; */
+  text-align: center;
+  /* background-color:#e49148; */
+
+}
+
+#sumOfTheNumbers > #result {
+  width: max-content;
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #fff; 
+}
+.stopwatch {
+  display:flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  /* background-color: teal; */
+  background-color: #eda86c57;
+  width:500px;
+  height: 200px;
+  color:#fff;
+  /* border:3px solid #e49148; */
+  border-radius:10px;
+}
+
+.main-container {
+  display:flex;
+  justify-content: center;
+  margin-top:25vh;
+}
+
+.timer {
+  /* background-color:blue; */
+  text-align:center;
+  padding:10px;
+  font-size:xx-large;
+  font-weight: bolder;
+}
+
+.btns {
+  margin-top:7%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn {
+  padding: 10px 20px;
+  border:none;
+  border-radius: 5px;
+  width:100px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px gray;
+}
+
+.btn-start {
+  background-color:rgb(244, 84, 56);
+  color: #fff;
+  font-size: large;
+}
+
+.btn-stop {
+  background-color:darkslategrey;
+  color: #fff;
+  font-size: large;
+}
+
+.btn-reset {
+  background-color: rgba(34, 103, 23, 0.92);
+  color: #fff;
+  font-size: large;
+}
+
+.btn-start:hover {
+  box-shadow: 0px 0px 5px tomato;
+}
+
+.btn-stop:hover {
+  box-shadow: 0px 0px 5px darkslategray;
+}
+
+.btn-reset:hover {
+  box-shadow: 0px 0px 5px darkgreen;
+}
+
+#conversion {
+  display:flex;
+  justify-content: center;
+  position:absolute;
+  top:50%;
+  left: 50%;
+  transform:translate(-50%, -50%);
+  background-color: #eda86c57;
+  /* background-color: #d9ecea; */
+  padding: 10px 20px;
+  border-radius: 10px;
+  width: 300px;
+  height:max-content;
+}
+
+.convertToCelcius {
+  display:flex;
+  flex-direction: column;
+  gap:20px;
+  align-items: center;
+}
+
+.convertToCelcius > h3 {
+  margin-bottom: 5%;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.convertToCelcius > input {
+  padding: 2px 5px;
+  border-radius: 5px;
+  width:200px;
+  border:none;
+  height: 30px;
+
+  /* width:200px;
+  height:30px;
+  border:none;
+  border-radius: 5px; 
+  padding: 2px 5px; */
+}
+
+.convertToCelcius > #result {
+  font-size: 1rem;
+  color: #fff;
+}
+
+.convertToCelcius > button {   
+  background-color: #ff6347;
+  color: white;
+  padding: 5px;
+  width: 180px;
+  border-radius: 8px;
+  border:none;
+  margin-bottom: 10%;
+}
+
+.convertToCelcius > button:hover {
+  background-color: #c25643   ;
+  cursor:pointer;
+  /* box-shadow: 1px 1px 3px #ff6347; */
+}
+
+@media print and (max-width: 768px) {
+  html {
+    visibility: hidden;
+  }
+}
